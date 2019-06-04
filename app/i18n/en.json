@@ -7,16 +7,20 @@
   "errors": {
     "invalidEmail": "Invalid email address."
   },
-  "firstExampleScreen": {
-    "poweredBy": "POWERED BY BOWSER",
-    "readyForLaunch": "Ready for launch.",
-    "continue": "CONTINUE"
+  "dashboardScreen": {
+    "header": "Welcome to Restaurant 1.0"
   },
-  "secondExampleScreen": {
-    "howTo": "HOW TO",
-    "title": "What’s In This Stack?",
-    "tagLine": "Congratulations, you’ve got a very advanced React Native app template here.  Take advantage of this boilerplate!",
-    "reactotron": "Demo Reactotron"
+  "redeemScreen": {
+    "header": "Welcome to Restaurant 1.0"
+  },
+  "scannerScreen": {
+    "header": "Welcome to Restaurant 1.0"
+  },
+  "summaryScreen": {
+    "header": "Coupon Transaction"
+  },
+  "qrScreen": {
+    "header": "Coupon Transaction"
   },
   "storybook": {
     "placeholder": "Placeholder",

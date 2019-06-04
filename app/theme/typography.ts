@@ -9,7 +9,7 @@ export const typography = {
   /**
    * The primary font.  Used in most places.
    */
-  primary: Platform.select({ ios: "Montserrat", android: "Montserrat" }),
+  primary: Platform.select({ ios: "Roboto", android: "Roboto" }),
 
   /**
    * An alternate font used for perhaps titles and stuff.

@@ -59,7 +59,9 @@ export class App extends React.Component<{}, AppState> {
     // otherwise, we're ready to render the app
 
     // --- am: begin list of stores ---
-    const otherStores = {}
+    const otherStores = {
+      dataStore: rootStore.dataStore
+    }
     // --- am: end list of stores ---
 
     return (
@@ -75,7 +77,12 @@ export class App extends React.Component<{}, AppState> {
 /**
  * This needs to match what's found in your app_delegate.m and MainActivity.java.
  */
-const APP_NAME = "Gourmet"
+const APP_NAME = "Restaurant"
+
+/**
+ * Disable yellow box warning
+ */
+console.disableYellowBox = true
 
 // Should we show storybook instead of our app?
 //

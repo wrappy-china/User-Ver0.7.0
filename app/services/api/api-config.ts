@@ -19,6 +19,6 @@ export interface ApiConfig {
  * The default configuration for the app.
  */
 export const DEFAULT_API_CONFIG: ApiConfig = {
-  url: env.API || "https://jsonplaceholder.typicode.com",
+  url: env.API || "https://api.networkgateway.net:8500",
   timeout: 10000,
 }

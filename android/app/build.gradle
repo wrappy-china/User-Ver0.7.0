@@ -102,7 +102,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.gourmet"
+        applicationId "com.restaurant"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -138,10 +138,13 @@ android {
 }
 
 dependencies {
-    implementation project(':react-native-gesture-handler')
+    implementation project(':react-native-vector-icons')
     implementation project(':react-native-splash-screen')
     implementation project(':react-native-localize')
+    implementation project(':react-native-linear-gradient')
     implementation project(':react-native-keychain')
+    implementation project(':react-native-gesture-handler')
+    implementation project(':react-native-camera')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.android.support:appcompat-v7:${rootProject.ext.supportLibVersion}"
     implementation "com.facebook.react:react-native:+"  // From node_modules

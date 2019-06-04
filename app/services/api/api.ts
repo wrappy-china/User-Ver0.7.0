@@ -44,59 +44,32 @@ export class Api {
     })
   }
 
-  /**
-   * Gets a list of users.
-   */
-  async getUsers(): Promise<Types.GetUsersResult> {
-    // make the api call
-    const response: ApiResponse<any> = await this.apisauce.get(`/users`)
-
-    // the typical ways to die when calling an api
+  async get(endpoint, payload, token): Promise<Types.ResponseData> {
+    if (token) this.apisauce.setHeader('Authorization', `Bearer ${token}`)
+    const response: ApiResponse<any> = await this.apisauce.get(endpoint, payload)
     if (!response.ok) {
       const problem = getGeneralApiProblem(response)
       if (problem) return problem
     }
-
-    const convertUser = raw => {
-      return {
-        id: raw.id,
-        name: raw.name,
-      }
-    }
-
-    // transform the data into the format we are expecting
     try {
-      const rawUsers = response.data
-      const resultUsers: Types.User[] = rawUsers.map(convertUser)
-      return { kind: "ok", users: resultUsers }
+      return { kind: "ok", payload: response.data }
     } catch {
       return { kind: "bad-data" }
     }
   }
 
-  /**
-   * Gets a single user by ID
-   */
-
-  async getUser(id: string): Promise<Types.GetUserResult> {
-    // make the api call
-    const response: ApiResponse<any> = await this.apisauce.get(`/users/${id}`)
-
-    // the typical ways to die when calling an api
+  async post(endpoint, payload, token): Promise<Types.ResponseData> {
+    if (token) this.apisauce.setHeader('Authorization', `Bearer ${token}`)
+    const response: ApiResponse<any> = await this.apisauce.post(endpoint, payload)
     if (!response.ok) {
       const problem = getGeneralApiProblem(response)
       if (problem) return problem
     }
-
-    // transform the data into the format we are expecting
     try {
-      const resultUser: Types.User = {
-        id: response.data.id,
-        name: response.data.name,
-      }
-      return { kind: "ok", user: resultUser }
+      return { kind: "ok", payload: response.data }
     } catch {
       return { kind: "bad-data" }
     }
   }
+
 }
