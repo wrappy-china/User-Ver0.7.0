@@ -192,7 +192,7 @@ export class RegisterScreen extends React.Component<RegisterScreenProps, {}> {
   doRegister = () => {
     if (this.doValidate()) {
       this.doShowIndicator()
-      this.props.dataStore.register({ id: this.state.username.value, name: this.state.name.value, password: this.state.password.value, provider: "wrapious", type: "CONSUMER" }).then((response) => {
+      this.props.dataStore.register({ id: this.state.username.value, name: this.state.name.value, password: this.state.password.value, provider: "world_gourmet_v", type: "CONSUMER" }).then((response) => {
         this.doHideIndicator()
         if (this.props.dataStore.transaction.code === 100) {
           this.setState({ redirect: 1 })

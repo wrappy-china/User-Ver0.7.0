@@ -31,11 +31,11 @@ export class LoginScreen extends React.Component<LoginScreenProps, {}> {
       title: "Authenticating",
       popupIndicator: false,
       username: {
-        value: "alex@wrapious",
+        value: "sam@world_gourmet_v",
         error: ""
       },
       password: {
-        value: "not4u2know",
+        value: "sam888",
         error: ""
       }
     }

@@ -251,7 +251,8 @@ export class DashboardScreen extends React.Component<DashboardScreenProps, {}> {
                 <Text style={{ fontWeight: 'bold', fontSize: 18, color: color.palette.steelBlue }}>Total Amount:  {this.props.dataStore.statistic.total}</Text>
               </Col>
               <Col style={{ flex: 1, alignItems: 'flex-end' }}>
-                <Button onPress={() => this.doScan()} title="Transfer" buttonStyle={{ borderColor: color.palette.uglyBlue, borderWidth: 1, backgroundColor: color.palette.dullTeal, width: 80, height: 30, paddingHorizontal: 10, paddingVertical: 5 }} titleStyle={{ fontWeight: 'bold', fontSize: 14 }} />
+                <Button onPress={() => 
+                  this.doScan()} title="Transfer" buttonStyle={{ borderColor: color.palette.uglyBlue, borderWidth: 1, backgroundColor: color.palette.dullTeal, width: 80, height: 30, paddingHorizontal: 10, paddingVertical: 5 }} titleStyle={{ fontWeight: 'bold', fontSize: 14 }} />
               </Col>
             </Row>
           </SafeAreaView>

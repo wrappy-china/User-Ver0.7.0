@@ -61,12 +61,12 @@ export const DataStoreModel = types
       const result = yield self.environment.api.post("/user/authenticate", payload, undefined)
       self.transaction.setStatus(result.kind)
       if (result.kind === "ok") {
-        const data = result.payload
+        const data = result.payload.data
         self.transaction.setCode(100)
         self.user.setId(data.user.id)
         self.user.setName(data.user.name)
         self.user.setType(data.user.type)
-        self.user.setToken(data.token)
+        self.user.setToken(result.payload.token)
         self.user.setActiveBalance(data.user.activeBalance)
         self.user.setDeactivatedBalance(data.user.deactivatedBalance)
         self.user.setInput(data.user.input)
@@ -102,6 +102,7 @@ export const DataStoreModel = types
       if (result.kind === "ok") {
         const coupons = result.payload.data
         self.clearCoupons()
+        if(coupons.constructor === Array){
         for (let coupon of coupons) {
           let item = CouponModel.create({
             id: coupon.id,
@@ -116,6 +117,7 @@ export const DataStoreModel = types
           self.addCoupon(item)
         }
       }
+    }
     }),
     transferCoupon: flow(function* (payload) {
       const result = yield self.environment.api.post("/user/coupon/transfer", payload, self.user.token)

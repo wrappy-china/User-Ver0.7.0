@@ -58,6 +58,9 @@ const styles = {
 @observer
 export class ScannerScreen extends React.Component<ScannerScreenProps, {}> {
 
+  componentDidMount(){
+    console.log("进入了")
+  }
   doBack = () => this.props.navigation.goBack()
 
   onSuccess = (e) => {
